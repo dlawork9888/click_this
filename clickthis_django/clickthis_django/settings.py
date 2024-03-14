@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-78d7_&n3alhcuxi)$39*l-$)c_9v@#q%ayq&41lpou9h8st@+2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -52,10 +52,18 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+
+
+##### 호스트 허용 관련
+ALLOWED_HOSTS = ['3.35.120.59'] # 내 EC2인스턴스만 허용
+CORS_ALLOW_ALL_ORIGINS = True  # 모든 출처에서 오는 요청을 허용
+"""
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3002",  # React 포트 
     "http://localhost:8002",  # Django 포트
 ]
+"""
 ROOT_URLCONF = "clickthis_django.urls"
 
 TEMPLATES = [

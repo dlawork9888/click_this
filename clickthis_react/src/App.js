@@ -7,11 +7,13 @@ import React, { useEffect, useState } from 'react';
 import './App.css'; // App, AppText
 
 function App() {
+  // 루프백 실패로 인한 퍼블릭 어드레스 State...
+  const [APITo, SetAPITO] = setState('http://ec2-3-35-120-59.ap-northeast-2.compute.amazonaws.com:8002/count_click/click/')
 
   // 누를 때 POST요청 보내는 함수
   const postCount = () => {
     //fetch
-    fetch('http://172.31.39.252:8002/count_click/click/', { // VM의 프라이빗 주소
+    fetch(APITo, { // VM의 프라이빗 주소 => 실패... 어째서 EC2 인스턴스 상에서 루프백이 불가능한 걸까..?
       method: 'POST', // POST요청 명시
       headers: {
         'Content-Type': 'application/json',
@@ -50,8 +52,8 @@ const [count, setCount] = useState(0);
 // 그러나 첫 번째 실패 => Django CORS ?
 // 맞음 ! => 장고 CORS 수정/ 장고 서버는 8002번 포트에서 열림/ React App은 3002번 포트에서 열리게끔
 useEffect(() => { 
-  fetch('http://172.31.39.252:8002/count_click/click/') // 어차피 React App, Django Server 같은 VM, 루프백 서버로 사용 ~~~
-    // VM의 프라이빗 주소
+  fetch(APITo) // 어차피 React App, Django Server 같은 VM, 루프백 서버로 사용 ~~~
+    // VM의 프라이빗 주소 => 실패... 어째서 EC2 인스턴스 상에서 루프백이 불가능한 걸까..?
     // try
     .then(response => response.json()) //json화
     .then(data => { 
