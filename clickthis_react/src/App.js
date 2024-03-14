@@ -9,7 +9,7 @@ import './App.css'; // App, AppText
 function App() {
   // 루프백 실패로 인한 퍼블릭 어드레스 State...
   const [APITo, setAPITO] = useState('http://ec2-3-35-120-59.ap-northeast-2.compute.amazonaws.com:8002/count_click/click/')
-
+  console.log("APITo:",APITo)
   // 누를 때 POST요청 보내는 함수
   const postCount = () => {
     //fetch
