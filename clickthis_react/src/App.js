@@ -11,7 +11,7 @@ function App() {
 // 누를 때 POST요청 보내는 함수
 const postCount = () => {
   //fetch
-  fetch('http://127.0.0.1:8000/count_click/click/', {
+  fetch('http://127.0.0.1:8002/count_click/click/', {
     method: 'POST', // POST요청 명시
     headers: {
       'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const [count, setCount] = useState(0);
 // 그러나 첫 번째 실패 => Django CORS ?
 // 맞음 ! => 장고 CORS 수정/ 장고 서버는 8002번 포트에서 열림/ React App은 3002번 포트에서 열리게끔
 useEffect(() => { 
-  fetch('http://127.0.0.1:8000/count_click/click/') // 어차피 React App, Django Server 같은 VM, 루프백 서버로 사용 ~~~
+  fetch('http://127.0.0.1:8002/count_click/click/') // 어차피 React App, Django Server 같은 VM, 루프백 서버로 사용 ~~~
     // try
     .then(response => response.json()) //json화
     .then(data => { 
