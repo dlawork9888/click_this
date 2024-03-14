@@ -103,6 +103,18 @@ useEffect(() => {
       >
         {count}
       </div>
+      <a href="https://github.com/dlawork9888" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+        <div 
+          className="AppText"
+          style={{
+            color : '#888888',
+            fontSize : 20,
+            marginTop:100
+          }}
+        >
+          github.com/dlawork9888
+        </div>
+      </a>
     </div>
   );
 }
