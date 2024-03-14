@@ -1,0 +1,18 @@
+### POST /// click this ! 
+# POST 요청의 body는 비어있음
+# 모든 Key(Property)는 Auto !
+POST http://127.0.0.1:8000/count_click/click/ HTTP/1.1
+Content-Type: application/json
+
+{
+    
+} 
+
+
+### GET /// 페이지가 처음 로드될때
+GET http://127.0.0.1:8000/count_click/click/ HTTP/1.1
+Content-Type: application/json
+
+{
+    
+}
